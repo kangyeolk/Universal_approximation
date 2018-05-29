@@ -3,8 +3,7 @@
 Universal approximation theorem is baseline theorem of deep neural network states that neural network can approximate any continuous function on compact subsets of n-dimensions under certain conditions. In that, neural network can be universal approximator of complex functions. In this repository, I constructed one layer neural network and approximated well known functions. In that process, I found approximation result is highly dependent on the setting. Especially, number of neurons, number of iterations, learning rate and initial value affect loss convergence and approximation. Therefore, I experimented many times to get some results
 
 
-### cosine function with period 1
-<img src="https://latex.codecogs.com/gif.latex?cos(2\pi x) \text { approximation }" />
+## cosine function with period 1
 
 Setting
 * Number of data = 1000
@@ -14,10 +13,10 @@ Setting
 * Activation function = ReLU
 
 <p align="center">
-  <img src="img/cos2pix.png" width="350"/>
+  <img src="img/cos2pix.png" width="600"/>
 </p>
 
-### cosine function with period 2 times pi
+## cosine function with period 2 times pi
 
 Setting
 * Number of data = 1000
@@ -27,5 +26,5 @@ Setting
 * Activation function = ReLU
 
 <p align="center">
-  <img src="img/sinx.png" width="350"/>
+  <img src="img/sinx.png" width="600"/>
 </p>
