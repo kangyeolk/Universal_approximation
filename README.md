@@ -13,8 +13,8 @@ Universal approximation theorem is baseline theorem of deep neural network state
 * Activation function = Sigmoid
 
 <p float="middle">
-  <img src="img/cos_sig_loss.png" width="100" />
-  <img src="img/cos_sig_approx.png" width="100" />
+  <img src="img/cos_sig_loss.png" width="400" />
+  <img src="img/cos_sig_approx.png" width="400" />
 <p>
 
 ### Setting
@@ -25,8 +25,8 @@ Universal approximation theorem is baseline theorem of deep neural network state
 * Activation function = ReLU
 
 <p float="middle">
-  <img src="img/cos_relu_loss.png" width="100" />
-  <img src="img/cos_relu_approx.png" width="100" />
+  <img src="img/cos_relu_loss.png" width="400" />
+  <img src="img/cos_relu_approx.png" width="400" />
 <p>
 
 ### Setting
@@ -37,8 +37,8 @@ Universal approximation theorem is baseline theorem of deep neural network state
 * Activation function = tanh
 
 <p float="middle">
-  <img src="img/cos_tanh_loss.png" width="100" />
-  <img src="img/cos_tanh_approx.png" width="100" />
+  <img src="img/cos_tanh_loss.png" width="400" />
+  <img src="img/cos_tanh_approx.png" width="400" />
 <p>
 
 
@@ -52,8 +52,8 @@ Universal approximation theorem is baseline theorem of deep neural network state
 * Activation function = Sigmoid
 
 <p float="middle">
-  <img src="img/sin_sig_loss.png" width="100" />
-  <img src="img/sin_sig_approx.png" width="100" />
+  <img src="img/sin_sig_loss.png" width="400" />
+  <img src="img/sin_sig_approx.png" width="400" />
 <p>
 
 ### Setting
@@ -64,8 +64,8 @@ Universal approximation theorem is baseline theorem of deep neural network state
 * Activation function = ReLU
 
 <p float="middle">
-  <img src="img/sin_relu.png" width="100" />
-  <img src="img/sin_relu_approx.png" width="100" />
+  <img src="img/sin_relu_loss.png" width="400" />
+  <img src="img/sin_relu_approx.png" width="400" />
 <p>
 
 ### Setting
@@ -76,6 +76,6 @@ Universal approximation theorem is baseline theorem of deep neural network state
 * Activation function = tanh
 
 <p float="middle">
-  <img src="img/sin_tanh_loss.png" width="100" />
-  <img src="img/sin_tanh_approx.png" width="100" />
+  <img src="img/sin_tanh_loss.png" width="400" />
+  <img src="img/sin_tanh_approx.png" width="400" />
 <p>
