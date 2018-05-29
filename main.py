@@ -39,10 +39,10 @@ class Approximator:
         return (x > 0).astype(int)
 
     def tanh(self, x):
-        return np.exp(x)-np.exp(-x) / (np.exp(x)+np.exp(-x))
+        return (np.exp(x)-np.exp(-x)) / (np.exp(x)+np.exp(-x))
 
     def d_tanh(self, x):
-        return 1 - np.power(self.tanh(x), 2)
+        return 1/(1+np.power(x, 2))
 
     # Weight update
     def W_update(self):
@@ -51,9 +51,9 @@ class Approximator:
         for epoch in range(self.L):
             a = np.matmul(self.W, self.X)
             F = np.matmul(self.alpha.T, actF(a))
-            d_alpha = np.matmul(actF(a), (F - self.t).T)/self.N
-            d_W0 = np.multiply(self.alpha, np.matmul(d_actF(a), np.multiply(self.x_data, (F - self.t)).T))/self.N
-            d_W1 = np.multiply(self.alpha, np.matmul(d_actF(a), (F - self.t).T))/self.N
+            d_alpha = 2*np.matmul(self.sigma(a), (F - self.t).T)/self.N
+            d_W0 = 2*np.multiply(self.alpha, np.matmul(d_actF(a), np.multiply(self.x_data, (F - self.t)).T))
+            d_W1 = 2*np.multiply(self.alpha, np.matmul(d_actF(a), (F - self.t).T))
             self.alpha = self.alpha-self.mu*d_alpha
             self.W = self.W-self.mu*np.concatenate((d_W0, d_W1), axis=1)
             self.J_MSE[epoch]= np.linalg.norm(F-self.t)**2
@@ -89,31 +89,31 @@ def f_test(x):
     return np.cos(2*np.pi*x)
 
 # With Logistic function
-simulate(N=100, M=20, L=1000, mu=0.05, target_func=f_test, nonLinear='sigma')
-simulate(N=1000, M=30, L=10000, mu=0.1, target_func=f_test, nonLinear='sigma')
+simulate(N=100, M=20, L=1000, mu=0.01, target_func=f_test, nonLinear='sigma')
+simulate(N=100, M=30, L=10000, mu=0.01, target_func=f_test, nonLinear='sigma')
 
 # With Relu
 simulate(N=100, M=20, L=1000, mu=0.05, target_func=f_test, nonLinear='relu')
-simulate(N=1000, M=30, L=10000, mu=0.1, target_func=f_test, nonLinear='relu')
+simulate(N=100, M=30, L=10000, mu=0.01, target_func=f_test, nonLinear='relu')
 
 # With tanh
-simulate(N=100, M=20, L=1000, mu=0.05, target_func=f_test, nonLinear='tanh')
-simulate(N=1000, M=30, L=10000, mu=0.1, target_func=f_test, nonLinear='tanh')
+simulate(N=1000, M=20, L=5000, mu=0.01, target_func=f_test, nonLinear='tanh')
+simulate(N=100, M=30, L=10000, mu=0.01, target_func=f_test, nonLinear='tanh')
 
 ## (2) sin(x) approximation
 
 # define target function
 def f_test(x):
-    return np.sin(x)
+    return np.sin(2*np.pi*x)
 
 # With Logistic function
 simulate(N=100, M=20, L=1000, mu=0.05, target_func=f_test, nonLinear='sigma')
-simulate(N=1000, M=30, L=10000, mu=0.1, target_func=f_test, nonLinear='sigma')
+simulate(N=1000, M=30, L=10000, mu=0.01, target_func=f_test, nonLinear='sigma')
 
 # With Relu
 simulate(N=100, M=20, L=1000, mu=0.05, target_func=f_test, nonLinear='relu')
-simulate(N=1000, M=30, L=10000, mu=0.1, target_func=f_test, nonLinear='relu')
+simulate(N=1000, M=50, L=10000, mu=0.002, target_func=f_test, nonLinear='relu')
 
 # With tanh
 simulate(N=100, M=20, L=1000, mu=0.05, target_func=f_test, nonLinear='tanh')
-simulate(N=1000, M=30, L=10000, mu=0.1, target_func=f_test, nonLinear='tanh')
+simulate(N=100, M=30, L=10000, mu=0.01, target_func=f_test, nonLinear='tanh')
