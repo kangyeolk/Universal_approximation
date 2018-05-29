@@ -16,11 +16,7 @@ Setting
   <img src="img/cos2pix.png" width="600"/>
 </p>
 
-<<<<<<< HEAD
 ## sine function with period 1
-=======
-## cosine function with period 2 times pi
->>>>>>> 33c52c8e2fb6d767d672a292c620f73d4b511971
 
 Setting
 * Number of data = 1000
@@ -30,9 +26,5 @@ Setting
 * Activation function = ReLU
 
 <p align="center">
-<<<<<<< HEAD
   <img src="img/sin2pix.png" width="60"/>
-=======
-  <img src="img/sinx.png" width="600"/>
->>>>>>> 33c52c8e2fb6d767d672a292c620f73d4b511971
 </p>
