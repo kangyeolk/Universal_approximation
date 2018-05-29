@@ -26,5 +26,5 @@ Setting
 * Activation function = ReLU
 
 <p align="center">
-  <img src="img/sin2pix.png" width="60"/>
+  <img src="img/sin2pix.png" width="600"/>
 </p>
